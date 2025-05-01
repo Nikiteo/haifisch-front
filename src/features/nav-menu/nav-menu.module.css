@@ -1,0 +1,20 @@
+.nav {
+	display: flex;
+	gap: 32px;
+}
+
+.navItem {
+	background: none;
+	border: none;
+	color: var(--color-text);
+	font-size: 18px;
+	font-weight: 300;
+	line-height: 100%;
+	cursor: pointer;
+	padding: 0;
+	transition: color 0.3s;
+}
+
+.navItem:hover {
+	color: var(--color-accent);
+}

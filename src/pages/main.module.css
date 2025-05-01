@@ -1,0 +1,82 @@
+.main {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	flex-direction: column;
+	background-color: var(--color-main);
+}
+
+.container {
+	display: flex;
+	flex: 1;
+	align-items: center;
+	padding-left: 100px;
+	gap: 50px;
+	overflow: hidden;
+	max-height: calc(100vh - 119px);
+}
+
+.textContent {
+	flex-basis: 40%;
+}
+
+.textRight {
+	text-align: right;
+}
+
+.subtitle {
+	font-family: var(--font-heading);
+	font-weight: 400;
+	font-size: 50px;
+	line-height: 110%;
+	text-transform: uppercase;
+	margin: 0;
+}
+
+.subtitleSpan {
+	font-family: var(--font-heading);
+	font-weight: 400;
+	font-style: italic;
+	font-size: 44px;
+	line-height: 110%;
+	text-transform: lowercase;
+}
+
+.offer {
+	font-family: var(--font-text);
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 140%;
+}
+
+.imageWrapper {
+	flex: 1;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.image {
+	max-width: 100%;
+	max-height: 100vh;
+	width: auto;
+	height: auto;
+	object-fit: contain;
+	object-position: center;
+}
+
+.calatogBtn {
+	cursor: pointer;
+	width: 220px;
+	height: 55px;
+	border-radius: 30px;
+	padding: 0;
+	background-color: var(--color-text);
+	color: white;
+	margin-top: 16px;
+	font-weight: 300;
+	font-size: 16px;
+	line-height: 100%;
+	text-align: center;
+}
