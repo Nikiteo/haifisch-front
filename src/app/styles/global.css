@@ -3,9 +3,6 @@
 :root {
 	--color-main: #ECECEC;
 	--color-text: #262626;
-	--color-accent: #d4af37;
-	--font-heading: 'Playfair Display', serif;
-	--font-text: 'Inter', sans-serif;
 }
 
 html,
@@ -15,6 +12,4 @@ body,
 	padding: 0;
 	width: 100vw;
 	height: 100vh;
-	font-family: var(--font-text);
-	color: var(--color-text);
 }

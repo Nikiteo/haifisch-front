@@ -1,2 +1,2 @@
-export * from './nav-menu'
-export * from './contact-button'
+export * from './navigation'
+export * from './hero-content'

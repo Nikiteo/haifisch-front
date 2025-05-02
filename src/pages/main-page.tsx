@@ -1,37 +1,32 @@
-import { Header } from '@/widgets'
-import styles from './main.module.css'
-import { main } from '@/shared/assets'
+import { Header } from '@/widgets/header'
+import { HeroText, HeroImage } from '@/features'
+import { Box, Stack } from '@mui/material'
 
 const Main = () => (
-	<main className={styles.main}>
+	<Box
+		component='main'
+		sx={{
+			pt: 4,
+			height: '100vh',
+			display: 'flex',
+			flexDirection: 'column',
+		}}
+	>
 		<Header />
-		<section className={styles.container}>
-			<div className={styles.textContent}>
-				<h1 className={styles.subtitle}>
-					изделия <span className={styles.subtitleSpan}>для </span>
-					декора
-					<br />
-					<div className={styles.textRight}>
-						<span className={styles.subtitleSpan}>из </span>
-						искусственного камня
-					</div>
-				</h1>
-				<p className={styles.offer}>
-					Получите специальные предложения при оформлении заказа
-					оптом. А также воплотите свои идеи и закажите продукцию по
-					индивидуальной разработке.
-				</p>
-				<button className={styles.calatogBtn}>Каталог</button>
-			</div>
-			<div className={styles.imageWrapper}>
-				<img
-					src={main}
-					alt='Изделия из искусственного камня'
-					className={styles.image}
-				/>
-			</div>
-		</section>
-	</main>
+		<Stack
+			component='section'
+			direction='row'
+			gap={12.5}
+			sx={{
+				flex: 1,
+				width: '100%',
+				overflow: 'hidden',
+			}}
+		>
+			<HeroText />
+			<HeroImage />
+		</Stack>
+	</Box>
 )
 
 export default Main

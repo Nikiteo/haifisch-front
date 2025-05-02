@@ -1,7 +1,12 @@
 import '@/app/styles/global.css'
-import '@/app/styles/fonts.css'
 import Main from '@/pages/main-page'
+import { ThemeProvider } from '@mui/material'
+import theme from '@/shared/theme'
 
 export const App = () => {
-	return <Main />
+	return (
+		<ThemeProvider theme={theme}>
+			<Main />
+		</ThemeProvider>
+	)
 }
