@@ -4,7 +4,7 @@ import { main } from '@/shared/assets'
 export const HeroImage = () => (
 	<Box
 		sx={{
-			width: '50%',
+			width: '55%',
 			height: '100%',
 			position: 'relative',
 		}}

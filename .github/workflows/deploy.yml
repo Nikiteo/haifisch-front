@@ -47,14 +47,15 @@ jobs:
         to: ${{ secrets.TELEGRAM_CHAT_ID }}
         token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         message: |
-          ✅ <b>Деплой успешно завершён!</b>
-          ———————————————
-          <b>Репозиторий:</b> ${{ github.repository }}
-          <b>Ветка:</b> ${{ github.ref_name }}
-          <b>Коммит:</b> <code>${{ github.sha }}</code>
-          ———————————————
-          <a href="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}">Подробнее в логах</a>
-        parse_mode: HTML
+          ✅ *Деплой успешно завершён!*
+          ==================
+          *Репозиторий:* ${{ github.repository }}
+          *Ветка:* ${{ github.ref_name }}
+          *Статус:* `${{ job.status }}`
+          ==================
+          [Подробнее в логах](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+        format: markdown
+        disable_web_page_preview: false
 
     - name: Notify Telegram on Failure
       if: failure()
@@ -63,10 +64,12 @@ jobs:
         to: ${{ secrets.TELEGRAM_CHAT_ID }}
         token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         message: |
-          ❌ <b>Деплой не удался!</b>
-          ———————————————
-          <b>Репозиторий:</b> ${{ github.repository }}
-          <b>Статус:</b> ${{ job.status }}
-          ———————————————
-          <a href="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}">Проверить логи</a>
-        parse_mode: HTML
+          ❌ *Деплой не удался!*
+          ==================
+          *Репозиторий:* ${{ github.repository }}
+          *Ветка:* ${{ github.ref_name }}
+          *Статус:* `${{ job.status }}`
+          ==================
+          [Подробнее в логах](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+        format: markdown
+        disable_web_page_preview: false
