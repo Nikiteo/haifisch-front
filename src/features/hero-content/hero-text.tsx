@@ -1,79 +1,94 @@
+import type { ScreenSize } from '@/shared'
 import { Button, Typography, Box } from '@mui/material'
+import { memo } from 'react'
 
-export const HeroText = () => (
-	<Box
-		sx={{
-			width: '50%',
-			display: 'flex',
-			flexDirection: 'column',
-			justifyContent: 'center',
-			ml: 25,
-		}}
-	>
-		<Typography
-			variant='h1'
-			lineHeight='1.1'
-			textTransform='uppercase'
-			sx={{ position: 'relative' }}
+interface HeroTextProps {
+	screenSize: ScreenSize
+}
+
+export const HeroText = memo(({ screenSize }: HeroTextProps) => {
+	const { isXxl, isXl, isLg, isMd } = screenSize
+
+	return (
+		<Box
+			sx={{
+				width: '50%',
+				display: 'flex',
+				flexDirection: 'column',
+				justifyContent: 'center',
+				ml: isXxl ? 25 : 6,
+			}}
 		>
-			Изделия{' '}
 			<Typography
 				variant='h1'
-				component='span'
+				lineHeight='1.1'
+				textTransform='uppercase'
 				sx={{
-					fontSize: '2.75rem',
-					fontStyle: 'italic',
-					display: 'inline-block',
-					textTransform: 'lowercase',
+					position: 'relative',
+					fontSize: isXxl ? '3.125rem' : '2.375rem',
 				}}
 			>
-				для
-			</Typography>{' '}
-			декора
-			<Box
-				component='span'
-				sx={{
-					display: 'block',
-					textAlign: 'right',
-					width: '100%',
-				}}
-			>
+				Изделия{' '}
 				<Typography
 					variant='h1'
 					component='span'
 					sx={{
 						fontSize: '2.75rem',
 						fontStyle: 'italic',
+						fontFamily: 'Playfair',
 						display: 'inline-block',
 						textTransform: 'lowercase',
 					}}
 				>
-					из
+					для
 				</Typography>{' '}
-				искусственного камня
-			</Box>
-		</Typography>
+				декора
+				<Box
+					component='span'
+					sx={{
+						display: 'block',
+						textAlign: 'right',
+						width: '100%',
+					}}
+				>
+					<Typography
+						variant='h1'
+						component='span'
+						sx={{
+							fontSize: '2.75rem',
+							fontStyle: 'italic',
+							fontFamily: 'Playfair',
+							display: 'inline-block',
+							textTransform: 'lowercase',
+						}}
+					>
+						из
+					</Typography>{' '}
+					искусственного камня
+				</Box>
+			</Typography>
 
-		<Typography
-			component='p'
-			variant='body1'
-			fontWeight={300}
-			mt={9}
-			mb={9}
-			lineHeight='1.4'
-			sx={{
-				maxWidth: '65ch',
-				width: '70%',
-				alignSelf: 'flex-start',
-			}}
-		>
-			Получите специальные предложения при оформлении заказа оптом. А
-			также воплотите свои идеи и закажите продукцию по индивидуальной
-			разработке.
-		</Typography>
+			<Typography
+				component='p'
+				variant='body1'
+				fontWeight={300}
+				mt={isXxl ? 9 : 6}
+				mb={isXxl ? 9 : 6}
+				lineHeight='1.4'
+				sx={{
+					maxWidth: '65ch',
+					width: '70%',
+					alignSelf: 'flex-start',
+				}}
+			>
+				Получите специальные предложения при оформлении заказа оптом. А
+				также воплотите свои идеи и закажите продукцию по индивидуальной
+				разработке.
+			</Typography>
 
-		<Button variant='catalog' sx={{ alignSelf: 'flex-start' }}>
-			Каталог
-		</Button>
-	</Box>
-)
+			<Button variant='catalog' sx={{ alignSelf: 'flex-start' }}>
+				Каталог
+			</Button>
+		</Box>
+	)
+})

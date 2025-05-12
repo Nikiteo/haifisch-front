@@ -128,6 +128,16 @@ const theme = createTheme({
 			fontWeight: 400,
 		},
 	},
+	breakpoints: {
+		values: {
+			xs: 320, // 320-480
+			sm: 480, // 480-640
+			md: 640, // 640-960
+			lg: 960, // 960-1200
+			xl: 1200, // 1200-1440
+			xxl: 1440, // 1440+
+		},
+	},
 })
 
 export default theme

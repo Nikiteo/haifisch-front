@@ -7,7 +7,7 @@ interface NavItemProps extends ButtonProps {
 
 const StyledNavItem = styled(Button)(() => ({
 	color: '#3C3C3C',
-	fontSize: '18px',
+	fontSize: '16px',
 	fontWeight: 300,
 	lineHeight: '100%',
 	padding: 0,
@@ -15,6 +15,7 @@ const StyledNavItem = styled(Button)(() => ({
 	textTransform: 'none',
 	'&:hover': {
 		backgroundColor: 'transparent',
+		textDecoration: 'underline',
 	},
 }))
 
