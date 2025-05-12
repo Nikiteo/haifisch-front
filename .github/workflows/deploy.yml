@@ -22,7 +22,7 @@ jobs:
         npm run build
 
     - name: Delete old dist/ on VM
-      uses: appleboy/ssh-action@v1.0.7
+      uses: appleboy/ssh-action@v0.1.7
       with:
         host: 87.242.119.108
         username: nikiteo
@@ -32,7 +32,7 @@ jobs:
           rm -rf dist
 
     - name: Upload new dist/
-      uses: appleboy/scp-action@v1.0.5
+      uses: appleboy/scp-action@v0.1.4
       with:
         host: 87.242.119.108
         username: nikiteo
@@ -42,7 +42,7 @@ jobs:
 
     - name: Notify Telegram on Success
       if: success()
-      uses: appleboy/telegram-action@v1.0.0
+      uses: appleboy/telegram-action@v1.0.1
       with:
         to: ${{ secrets.TELEGRAM_CHAT_ID }}
         token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -58,7 +58,7 @@ jobs:
 
     - name: Notify Telegram on Failure
       if: failure()
-      uses: appleboy/telegram-action@v1.0.0
+      uses: appleboy/telegram-action@v1.0.1
       with:
         to: ${{ secrets.TELEGRAM_CHAT_ID }}
         token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
