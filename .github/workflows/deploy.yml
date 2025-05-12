@@ -8,7 +8,6 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-    # Шаги сборки и деплоя остаются без изменений
     - name: Checkout code
       uses: actions/checkout@v4
 
@@ -23,7 +22,7 @@ jobs:
         npm run build
 
     - name: Delete old dist/ on VM
-      uses: appleboy/ssh-action@v1
+      uses: appleboy/ssh-action@v1.0.7
       with:
         host: 87.242.119.108
         username: nikiteo
@@ -33,7 +32,7 @@ jobs:
           rm -rf dist
 
     - name: Upload new dist/
-      uses: appleboy/scp-action@v1
+      uses: appleboy/scp-action@v1.0.5
       with:
         host: 87.242.119.108
         username: nikiteo
@@ -41,10 +40,9 @@ jobs:
         source: "dist/"
         target: "~/haifisch-front/"
 
-    # Уведомление при успехе
     - name: Notify Telegram on Success
       if: success()
-      uses: appleboy/telegram-action@v1
+      uses: appleboy/telegram-action@v1.0.0
       with:
         to: ${{ secrets.TELEGRAM_CHAT_ID }}
         token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
@@ -58,10 +56,9 @@ jobs:
           <a href="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}">Подробнее в логах</a>
         parse_mode: HTML
 
-    # Уведомление при ошибке (исправлено!)
     - name: Notify Telegram on Failure
-      if: failure() # Теперь корректное условие
-      uses: appleboy/telegram-action@v1
+      if: failure()
+      uses: appleboy/telegram-action@v1.0.0
       with:
         to: ${{ secrets.TELEGRAM_CHAT_ID }}
         token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
