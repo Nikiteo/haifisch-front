@@ -1,42 +1,72 @@
-name: Deploy to VM
+name: Deploy to VM with Notifications
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: 20
 
-      - name: Install and build
-        run: |
-          npm install
-          npm run build
+    - name: Install and build
+      run: |
+        npm install
+        npm run build
 
-      - name: Delete old dist/ on VM
-        uses: appleboy/ssh-action@v1
-        with:
-          host: 87.242.119.108
-          username: nikiteo
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          script: |
-            cd ~/haifisch-front
-            rm -rf dist
+    - name: Delete old dist/ on VM
+      uses: appleboy/ssh-action@v1
+      with:
+        host: 87.242.119.108
+        username: nikiteo
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        script: |
+          cd ~/haifisch-front
+          rm -rf dist
 
-      - name: Upload new dist/
-        uses: appleboy/scp-action@v1
-        with:
-          host: 87.242.119.108
-          username: nikiteo
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
-          source: "dist/"
-          target: "~/haifisch-front/"
-          rm: true
+    - name: Upload new dist/
+      uses: appleboy/scp-action@v1
+      with:
+        host: 87.242.119.108
+        username: nikiteo
+        key: ${{ secrets.SSH_PRIVATE_KEY }}
+        source: "dist/"
+        target: "~/haifisch-front/"
+
+    - name: Notify Telegram on Success
+      if: success()
+      uses: appleboy/telegram-action@v1
+      with:
+        to: ${{ secrets.TELEGRAM_CHAT_ID }}
+        token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        message: |
+          ✅ <b>Деплой успешно завершён!</b>
+          ———————————————
+          <b>Репозиторий:</b> ${{ github.repository }}
+          <b>Ветка:</b> ${{ github.ref_name }}
+          <b>Коммит:</b> <code>${{ github.sha }}</code>
+          ———————————————
+          <a href="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}">Подробнее в логах</a>
+        parse_mode: HTML
+
+    - name: Notify Telegram on Failure
+      if: failure()
+      uses: appleboy/telegram-action@v1
+      with:
+        to: ${{ secrets.TELEGRAM_CHAT_ID }}
+        token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+        message: |
+          ❌ <b>Деплой не удался!</b>
+          ———————————————
+          <b>Ошибка в шаге:</b> ${{ failure() }}
+          <b>Репозиторий:</b> ${{ github.repository }}
+          ———————————————
+          <a href="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}">Проверить логи</a>
+        parse_mode: HTML
