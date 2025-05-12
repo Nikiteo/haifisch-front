@@ -1,2 +1,2 @@
 export { default as logo } from './haifisch.png'
-export { default as main } from './main.png'
+export { default as main } from './main.jpg'
