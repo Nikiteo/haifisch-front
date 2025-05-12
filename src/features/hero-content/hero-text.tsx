@@ -7,7 +7,7 @@ interface HeroTextProps {
 }
 
 export const HeroText = memo(({ screenSize }: HeroTextProps) => {
-	const { isXxl, isXl, isLg, isMd } = screenSize
+	const { isXxl } = screenSize
 
 	return (
 		<Box

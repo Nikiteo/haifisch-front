@@ -5,7 +5,7 @@ import { useScreenSize } from '@/shared'
 
 const Main = () => {
 	const screenSize = useScreenSize()
-	const { isXxl, isXl, isLg, isMd } = screenSize
+	const { isXxl, isXl, isLg } = screenSize
 
 	const gap = isXxl ? 12.5 : isXl ? 6.5 : isLg ? 2.5 : 1
 
