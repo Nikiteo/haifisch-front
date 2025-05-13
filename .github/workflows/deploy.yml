@@ -55,7 +55,7 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         source: "dist/*"
         target: "~/haifisch-front/"
-        strip_components: 1
+        strip_components: 0
 
     # ======================
     # 4. Уведомления
