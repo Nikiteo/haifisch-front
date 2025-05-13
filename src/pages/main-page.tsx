@@ -1,5 +1,5 @@
 import { Header } from '@/widgets/header'
-import { HeroText, HeroImage } from '@/features'
+import { MainText, MainImage } from '@/features'
 import { Box, Stack } from '@mui/material'
 import { useScreenSize } from '@/shared'
 
@@ -16,6 +16,7 @@ const Main = () => {
 				height: '100vh',
 				display: 'flex',
 				flexDirection: 'column',
+				bgcolor: 'var(--color-main)',
 			}}
 		>
 			<Header />
@@ -26,11 +27,10 @@ const Main = () => {
 				sx={{
 					flex: 1,
 					width: '100%',
-					overflow: 'hidden',
 				}}
 			>
-				<HeroText screenSize={screenSize} />
-				<HeroImage />
+				<MainText screenSize={screenSize} />
+				<MainImage />
 			</Stack>
 		</Box>
 	)

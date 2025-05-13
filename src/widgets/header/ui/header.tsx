@@ -28,13 +28,8 @@ export const Header = () => {
 
 	const isDesktop = isXxl || isXl || isLg
 
-	const {
-		isDrawerOpen,
-		isScrolled,
-		handleContactClick,
-		openDrawer,
-		closeDrawer,
-	} = useHeaderLogic()
+	const { isDrawerOpen, handleContactClick, openDrawer, closeDrawer } =
+		useHeaderLogic()
 
 	return (
 		<Box
@@ -45,8 +40,7 @@ export const Header = () => {
 				left: 0,
 				right: 0,
 				zIndex: 1100,
-				bgcolor: 'background.paper',
-				boxShadow: isScrolled ? 1 : 'none',
+				bgcolor: 'var(--color-main)',
 				transition: 'all 0.3s ease',
 				display: 'flex',
 				justifyContent: 'space-between',

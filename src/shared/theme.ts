@@ -24,6 +24,7 @@ const theme = createTheme({
 				{
 					props: { variant: 'catalog' },
 					style: {
+						fontWeight: 300,
 						backgroundColor: '#262626',
 						color: '#FBFBFB',
 						'&:hover': {
@@ -40,6 +41,7 @@ const theme = createTheme({
 				{
 					props: { variant: 'contact' },
 					style: {
+						fontWeight: 300,
 						backgroundColor: 'transparent',
 						color: '#262626',
 						border: '1px solid #262626',
@@ -73,8 +75,8 @@ const theme = createTheme({
 		},
 		h2: {
 			fontFamily: '"Playfair Display", serif',
-			fontWeight: 600,
-			fontSize: '2.75rem',
+			fontWeight: 400,
+			fontSize: '2.125rem',
 		},
 		h3: {
 			fontFamily: '"Playfair Display", serif',

@@ -1,25 +1,29 @@
+import { hero } from '@/shared/assets'
 import { Box } from '@mui/material'
-import { main } from '@/shared/assets'
 
-export const HeroImage = () => (
-	<Box
-		sx={{
-			width: '55%',
-			height: '100%',
-			position: 'relative',
-		}}
-	>
+export const HeroImage = () => {
+	return (
 		<Box
-			component='img'
-			src={main}
-			alt='Изделия из искусственного камня'
-			loading='lazy'
 			sx={{
 				width: '100%',
-				height: '100%',
-				objectFit: 'cover',
-				objectPosition: 'center',
+				maxWidth: 1240,
+				height: 432,
+				display: 'flex',
+				justifyContent: 'center',
+				alignItems: 'center',
 			}}
-		/>
-	</Box>
-)
+		>
+			<Box
+				component='img'
+				src={hero}
+				alt='Изделия из искусственного камня'
+				loading='lazy'
+				sx={{
+					width: '100%',
+					height: '100%',
+					objectFit: 'fill',
+				}}
+			/>
+		</Box>
+	)
+}

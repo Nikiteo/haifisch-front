@@ -1,9 +1,8 @@
-import { useCallback, useState, useEffect } from 'react'
+import { useCallback, useState } from 'react'
 import { useMediaQuery, useTheme } from '@mui/material'
 
 export const useHeaderLogic = () => {
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false)
-	const [isScrolled, setIsScrolled] = useState(false)
 
 	const theme = useTheme()
 	const isDesktop = useMediaQuery(theme.breakpoints.up('md'))
@@ -15,16 +14,10 @@ export const useHeaderLogic = () => {
 		}, 3500)
 	}, [])
 
-	useEffect(() => {
-		const handleScroll = () => setIsScrolled(window.scrollY > 10)
-		window.addEventListener('scroll', handleScroll)
-		return () => window.removeEventListener('scroll', handleScroll)
-	}, [])
 
 	return {
 		isDesktop,
 		isDrawerOpen,
-		isScrolled,
 		handleContactClick,
 		openDrawer: () => setIsDrawerOpen(true),
 		closeDrawer: () => setIsDrawerOpen(false),

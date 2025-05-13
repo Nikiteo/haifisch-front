@@ -1,94 +1,45 @@
-import type { ScreenSize } from '@/shared'
-import { Button, Typography, Box } from '@mui/material'
-import { memo } from 'react'
+import { Typography, Box } from '@mui/material'
 
-interface HeroTextProps {
-	screenSize: ScreenSize
-}
-
-export const HeroText = memo(({ screenSize }: HeroTextProps) => {
-	const { isXxl } = screenSize
-
+export const HeroText = () => {
 	return (
 		<Box
 			sx={{
-				width: '45%',
+				width: 620,
 				display: 'flex',
 				flexDirection: 'column',
-				justifyContent: 'center',
-				ml: isXxl ? 25 : 6,
+				pb: 15,
 			}}
 		>
-			<Typography
-				variant='h1'
-				lineHeight='1.1'
-				textTransform='uppercase'
-				sx={{
-					position: 'relative',
-					fontSize: isXxl ? '3.125rem' : '2.375rem',
-				}}
-			>
-				Изделия{' '}
+			<Box sx={{ width: '100%', textAlign: 'right' }}>
 				<Typography
-					variant='h1'
-					component='span'
-					sx={{
-						fontSize: '2.75rem',
-						fontStyle: 'italic',
-						fontFamily: 'Playfair',
-						display: 'inline-block',
-						textTransform: 'lowercase',
-					}}
+					variant='h2'
+					lineHeight='1.4'
+					textTransform='uppercase'
 				>
-					для
-				</Typography>{' '}
-				декора
-				<Box
-					component='span'
-					sx={{
-						display: 'block',
-						textAlign: 'right',
-						width: '100%',
-					}}
-				>
-					<Typography
-						variant='h1'
-						component='span'
-						sx={{
-							fontSize: '2.75rem',
-							fontStyle: 'italic',
-							fontFamily: 'Playfair',
-							display: 'inline-block',
-							textTransform: 'lowercase',
-						}}
-					>
-						из
-					</Typography>{' '}
-					искусственного камня
-				</Box>
+					Мастерская Haifisch –
+				</Typography>
+			</Box>
+
+			<Typography variant='h2' lineHeight='1.4' textTransform='uppercase'>
+				создаём уникальные предметы интерьера
 			</Typography>
 
 			<Typography
 				component='p'
 				variant='body1'
 				fontWeight={300}
-				mt={isXxl ? 9 : 6}
-				mb={isXxl ? 9 : 6}
 				lineHeight='1.4'
+				pt={9}
 				sx={{
-					maxWidth: '65ch',
-					width: '70%',
-					alignSelf: 'flex-start',
+					width: '60%',
+					alignSelf: 'flex-end',
 				}}
 			>
-				Получите специальные предложения при оформлении заказа оптом. А
-				также воплотите свои идеи и закажите продукцию по индивидуальной
-				разработке.
+				Наши изделия из искусственного камня сочетают в себе
+				элегантность и практичность. Каждый предмет имеет неповторимый
+				природный узор и текстуру и станет ярким акцентом в любом
+				интерьере.
 			</Typography>
-
-			<Button variant='catalog' sx={{ alignSelf: 'flex-start' }}>
-				Каталог
-			</Button>
 		</Box>
 	)
-})
+}
