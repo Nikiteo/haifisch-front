@@ -12,26 +12,10 @@ jobs:
 
     steps:
     # ======================
-    # 1. ИНИЦИАЛИЗАЦИЯ
-    # ======================
-    - name: "▛▀▀▀▀▀▀▀▀▀▀▀▀▀▀▀▜"
-      run: echo "▌🚀 Starting deployment process ▌"
-
-    - name: Show ASCII banner
-      run: |
-        echo "  _____ _____ _____ _____ _____ _____ _____ _____  "
-        echo " |  _  |  |  |   __|     |   __|  _  |     |   __| "
-        echo " |   __|  |  |  |  |  |  |  |  |     | | | |   __| "
-        echo " |__|  |_____|_____|_____|_____|__|__|_|_|_|_____| "
-        echo "                  DEPLOYMENT v1.0                   "
-
-    # ======================
-    # 2. ПОДГОТОВКА
+    # 1. Подготовка
     # ======================
     - name: Checkout code
       uses: actions/checkout@v4
-      with:
-        fetch-depth: 0
 
     - name: Setup Node.js
       uses: actions/setup-node@v4
@@ -40,34 +24,20 @@ jobs:
         cache: 'npm'
 
     # ======================
-    # 3. СБОРКА
+    # 2. Сборка
     # ======================
     - name: Install dependencies
-      run: |
-        echo "::group::📦 Installing dependencies"
-        npm ci
-        echo "::endgroup::"
-        echo "::notice::Dependencies installed successfully"
+      run: npm ci
 
     - name: Build project
       run: |
-        echo "::group::🔨 Running build"
         npm run build
         echo "BUILD_DATE=$(date +'%Y.%m.%d-%H:%M')" >> $GITHUB_ENV
-        echo "::endgroup::"
-        echo "::notice title=Build::Production build completed"
 
     # ======================
-    # 4. ДЕПЛОЙ
+    # 3. Деплой
     # ======================
-    - name: Prepare deployment
-      run: |
-        echo "::group::📡 Connecting to VM"
-        echo "Target: 87.242.119.108"
-        echo "User: nikiteo"
-        echo "::endgroup::"
-
-    - name: Clean remote dist
+    - name: Clean remote directory
       uses: appleboy/ssh-action@v0.1.7
       with:
         host: 87.242.119.108
@@ -75,57 +45,31 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
           cd ~/haifisch-front
-          rm -rf dist
-          echo "🗑️ Old dist folder removed"
+          rm -rf assets index.html *.js *.css *.ico
 
-    - name: Upload new build
+    - name: Upload built files
       uses: appleboy/scp-action@v0.1.4
       with:
         host: 87.242.119.108
         username: nikiteo
         key: ${{ secrets.SSH_PRIVATE_KEY }}
-        source: "dist/"
+        source: "dist/*"
         target: "~/haifisch-front/"
         strip_components: 1
 
     # ======================
-    # 5. УВЕДОМЛЕНИЯ
+    # 4. Уведомления
     # ======================
     - name: Telegram notification
       uses: appleboy/telegram-action@v1.0.1
-      if: always()
       with:
         to: ${{ secrets.TELEGRAM_CHAT_ID }}
         token: ${{ secrets.TELEGRAM_BOT_TOKEN }}
         message: |
-          *${{ job.status == 'success' && '✅ DEPLOY SUCCESS' || '❌ DEPLOY FAILED' }}*
+          *${{ job.status == 'success' && '✅ Деплой успешен' || '❌ Ошибка деплоя' }}*
           ==================
-          *Project*: ${{ github.repository }}
-          *Branch*: ${{ github.ref_name }}
-          *Version*: ${{ env.BUILD_DATE }}
-          *Commit*: `${{ github.sha }}`
+          *Проект*: ${{ github.repository }}
+          *Версия*: ${{ env.BUILD_DATE }}
           ==================
-          [View logs](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
+          [Логи](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
         format: markdown
-
-    # ======================
-    # 6. ОТЧЁТ
-    # ======================
-    - name: Create summary
-      if: always()
-      run: |
-        echo "### 🚀 Deployment Summary" >> $GITHUB_STEP_SUMMARY
-        echo "| Stage | Status | Time |" >> $GITHUB_STEP_SUMMARY
-        echo "|-------|--------|------|" >> $GITHUB_STEP_SUMMARY
-        echo "| Setup | ✅ Success | $(date +'%T') |" >> $GITHUB_STEP_SUMMARY
-        echo "| Build | ✅ Success | $(date +'%T') |" >> $GITHUB_STEP_SUMMARY
-        echo "| Deploy | ${{ job.status == 'success' && '✅ Success' || '❌ Failed' }} | $(date +'%T') |" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "**Build version:** ${{ env.BUILD_DATE }}" >> $GITHUB_STEP_SUMMARY
-        echo "**Commit:** [${{ github.sha }}](${{ github.server_url }}/${{ github.repository }}/commit/${{ github.sha }})" >> $GITHUB_STEP_SUMMARY
-        echo "" >> $GITHUB_STEP_SUMMARY
-        echo "![Deploy](https://media.giphy.com/media/3o7TKSjRrfIPjeiVyM/giphy.gif)" >> $GITHUB_STEP_SUMMARY
-
-    - name: "▙▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▟"
-      if: always()
-      run: echo "▌🏁 Deployment ${{ job.status }} ▌"
