@@ -5,9 +5,8 @@ interface NavItemProps extends ButtonProps {
 	targetId: string
 }
 
-const StyledNavItem = styled(Button)(() => ({
-	color: '#3C3C3C',
-	fontSize: '16px',
+const StyledNavItem = styled(Button)(({ theme }) => ({
+	color: `${theme.palette.primary.contrastText}`,
 	fontWeight: 300,
 	lineHeight: '100%',
 	padding: 0,

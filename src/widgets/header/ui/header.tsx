@@ -1,69 +1,57 @@
-import { Box } from '@mui/material'
 import { NavMenu } from '@/features/navigation'
 import { useHeaderLogic } from '../lib/use-header-logic'
 import { ContactButton } from './contact-button'
 import { Logo } from './logo'
 import { MobileDrawer } from './mobile-drawer'
 import { MobileMenuButton } from './mobile-menu-button'
-import { useScreenSize } from '@/shared'
+import { useTheme } from '@mui/material/styles'
+import useMediaQuery from '@mui/material/useMediaQuery'
+import AppBar from '@mui/material/AppBar'
+import Toolbar from '@mui/material/Toolbar'
 
 export const Header = () => {
-	const screenSize = useScreenSize()
-	const { isXxl, isXl, isLg, isMd } = screenSize
-
-	const logoSize = isXxl
-		? 'xxl'
-		: isXl
-		? 'xl'
-		: isLg
-		? 'lg'
-		: isMd
-		? 'md'
-		: 'sm'
-
-	const padding = {
-		py: isXxl ? 8 : isXl ? 6 : isLg ? 6 : isMd ? 5 : 4,
-		px: isXxl ? 25 : isXl ? 6 : isLg ? 6 : isMd ? 5 : 5,
-	}
-
-	const isDesktop = isXxl || isXl || isLg
-
+	const theme = useTheme()
+	const isDesktop = useMediaQuery(theme.breakpoints.up('lg'))
 	const { isDrawerOpen, handleContactClick, openDrawer, closeDrawer } =
 		useHeaderLogic()
 
 	return (
-		<Box
-			component='header'
+		<AppBar
+			position='fixed'
 			sx={{
-				position: 'fixed',
-				top: 0,
-				left: 0,
-				right: 0,
-				zIndex: 1100,
-				bgcolor: 'var(--color-main)',
+				boxShadow: 'none',
+				bgcolor: 'primary.main',
 				transition: 'all 0.3s ease',
-				display: 'flex',
-				justifyContent: 'space-between',
-				alignItems: 'center',
-				...padding,
+				py: { xs: 4, sm: 5, md: 6, lg: 6, xl: 6 },
+				px: { xs: 5, sm: 5, md: 6, lg: 6, xl: 25 },
 			}}
 		>
-			<Logo size={logoSize} />
+			<Toolbar
+				disableGutters
+				sx={{
+					width: '100%',
+					display: 'flex',
+					justifyContent: 'space-between',
+					alignItems: 'center',
+				}}
+			>
+				<Logo />
 
-			{isDesktop ? (
-				<>
-					<NavMenu />
-					<ContactButton onClick={handleContactClick} />
-				</>
-			) : (
-				<MobileMenuButton onClick={openDrawer} />
-			)}
+				{isDesktop ? (
+					<>
+						<NavMenu />
+						<ContactButton onClick={handleContactClick} />
+					</>
+				) : (
+					<MobileMenuButton onClick={openDrawer} />
+				)}
 
-			<MobileDrawer
-				open={isDrawerOpen}
-				onClose={closeDrawer}
-				onContactClick={handleContactClick}
-			/>
-		</Box>
+				<MobileDrawer
+					open={isDrawerOpen}
+					onClose={closeDrawer}
+					onContactClick={handleContactClick}
+				/>
+			</Toolbar>
+		</AppBar>
 	)
 }

@@ -19,8 +19,14 @@ export const NavMenu = memo(({ vertical = false }: NavMenuProps) => (
 			alignItems: vertical ? 'flex-start' : 'center',
 		}}
 	>
-		<NavItem targetId='about'>О нас</NavItem>
-		<NavItem targetId='catalog'>Каталог</NavItem>
-		<NavItem targetId='stores'>Магазины</NavItem>
+		<NavItem sx={{ fontSize: { xl: 18, lg: 16 } }} targetId='about'>
+			О нас
+		</NavItem>
+		<NavItem sx={{ fontSize: { xl: 18, lg: 16 } }} targetId='catalog'>
+			Каталог
+		</NavItem>
+		<NavItem sx={{ fontSize: { xl: 18, lg: 16 } }} targetId='stores'>
+			Магазины
+		</NavItem>
 	</Stack>
 ))

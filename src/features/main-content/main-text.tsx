@@ -1,22 +1,25 @@
-import type { ScreenSize } from '@/shared'
-import { Button, Typography, Box } from '@mui/material'
-import { memo } from 'react'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Typography from '@mui/material/Typography'
 
-interface MainTextProps {
-	screenSize: ScreenSize
-}
-
-export const MainText = memo(({ screenSize }: MainTextProps) => {
-	const { isXxl } = screenSize
-
+export const MainText = () => {
 	return (
 		<Box
 			sx={{
-				width: '45%',
+				width: {
+					xl: '45%',
+					lg: '45%',
+					md: '45%',
+					sm: '100%',
+					xs: '100%',
+				},
 				display: 'flex',
 				flexDirection: 'column',
 				justifyContent: 'center',
-				ml: isXxl ? 25 : 6,
+				position: 'relative',
+				zIndex: 1,
+				ml: { xl: 25, lg: 6, md: 6 },
+				px: { xl: 0, lg: 0, md: 0, sm: 5, xs: 5 },
 			}}
 		>
 			<Typography
@@ -25,7 +28,13 @@ export const MainText = memo(({ screenSize }: MainTextProps) => {
 				textTransform='uppercase'
 				sx={{
 					position: 'relative',
-					fontSize: isXxl ? '3.125rem' : '2.375rem',
+					fontSize: {
+						xl: 50,
+						lg: 38,
+						md: 32,
+						sm: 32,
+						xs: 26,
+					},
 				}}
 			>
 				Изделия{' '}
@@ -33,9 +42,14 @@ export const MainText = memo(({ screenSize }: MainTextProps) => {
 					variant='h1'
 					component='span'
 					sx={{
-						fontSize: '2.75rem',
+						fontSize: {
+							xl: 44,
+							lg: 32,
+							md: 32,
+							sm: 32,
+							xs: 26,
+						},
 						fontStyle: 'italic',
-						fontFamily: 'Playfair',
 						display: 'inline-block',
 						textTransform: 'lowercase',
 					}}
@@ -55,9 +69,14 @@ export const MainText = memo(({ screenSize }: MainTextProps) => {
 						variant='h1'
 						component='span'
 						sx={{
-							fontSize: '2.75rem',
+							fontSize: {
+								xl: 44,
+								lg: 32,
+								md: 32,
+								sm: 32,
+								xs: 26,
+							},
 							fontStyle: 'italic',
-							fontFamily: 'Playfair',
 							display: 'inline-block',
 							textTransform: 'lowercase',
 						}}
@@ -71,10 +90,7 @@ export const MainText = memo(({ screenSize }: MainTextProps) => {
 			<Typography
 				component='p'
 				variant='body1'
-				fontWeight={300}
-				mt={isXxl ? 9 : 6}
-				mb={isXxl ? 9 : 6}
-				lineHeight='1.4'
+				my={{ xl: 9, lg: 6, md: 6, sm: 5, xs: 5 }}
 				sx={{
 					width: '80%',
 					alignSelf: 'flex-start',
@@ -85,9 +101,26 @@ export const MainText = memo(({ screenSize }: MainTextProps) => {
 				разработке.
 			</Typography>
 
-			<Button variant='catalog' sx={{ alignSelf: 'flex-start' }}>
+			<Button
+				variant='catalog'
+				sx={{
+					width: {
+						sm: 164,
+						md: 200,
+						lg: 220,
+						xl: 220,
+					},
+					height: {
+						sm: 46,
+						md: 54,
+						lg: 58,
+						xl: 58,
+					},
+					alignSelf: 'flex-start',
+				}}
+			>
 				Каталог
 			</Button>
 		</Box>
 	)
-})
+}

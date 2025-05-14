@@ -1,4 +1,4 @@
-import '@/app/styles/global.css'
+import './styles/global.css'
 import Main from '@/pages/main-page'
 import { Box, ThemeProvider } from '@mui/material'
 import theme from '@/shared/theme'
