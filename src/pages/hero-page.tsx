@@ -1,7 +1,14 @@
 import { HeroImage, HeroText } from '@/features'
+import { Grid } from '@mui/material'
 import Box from '@mui/material/Box'
+import useMediaQuery from '@mui/material/useMediaQuery'
+import { useTheme } from '@mui/material/styles'
 
 const Hero = () => {
+	const theme = useTheme()
+	const isMd = useMediaQuery(theme.breakpoints.down('lg'))
+	const isSm = useMediaQuery(theme.breakpoints.down('md'))
+
 	return (
 		<Box
 			component='section'
@@ -9,10 +16,6 @@ const Hero = () => {
 				height: '100vh',
 				display: 'flex',
 				flexDirection: 'column',
-				alignItems: {
-					xl: 'center',
-					lg: 'center',
-				},
 				pt: {
 					xl: 30,
 					lg: 26,
@@ -29,7 +32,12 @@ const Hero = () => {
 				},
 			}}
 		>
-			<HeroText />
+			<Grid container direction={isMd ? 'row-reverse' : 'row'}>
+				{!isSm && <Grid size={!isMd ? 'grow' : 4} />}
+				<Grid size='grow'>
+					<HeroText />
+				</Grid>
+			</Grid>
 			<HeroImage />
 		</Box>
 	)
