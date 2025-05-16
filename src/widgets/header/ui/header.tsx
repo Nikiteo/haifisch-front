@@ -17,7 +17,7 @@ export const Header = () => {
 
 	return (
 		<AppBar
-			position='fixed'
+			position='sticky'
 			sx={{
 				boxShadow: 'none',
 				bgcolor: 'primary.main',
