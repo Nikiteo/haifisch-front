@@ -4,7 +4,6 @@ import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { useTheme } from '@mui/material/styles'
-import Toolbar from '@mui/material/Toolbar'
 
 const Main = () => {
 	const theme = useTheme()
