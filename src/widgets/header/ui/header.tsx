@@ -29,6 +29,7 @@ export const Header = () => {
 			<Toolbar
 				disableGutters
 				sx={{
+					minHeight: 'unset',
 					width: '100%',
 					display: 'flex',
 					justifyContent: 'space-between',
@@ -46,11 +47,7 @@ export const Header = () => {
 					<MobileMenuButton onClick={openDrawer} />
 				)}
 
-				<MobileDrawer
-					open={isDrawerOpen}
-					onClose={closeDrawer}
-					onContactClick={handleContactClick}
-				/>
+				<MobileDrawer open={isDrawerOpen} onClose={closeDrawer} />
 			</Toolbar>
 		</AppBar>
 	)

@@ -15,7 +15,6 @@ export interface LogoProps {
 export interface MobileDrawerProps {
 	open: boolean
 	onClose: () => void
-	onContactClick: () => void
 }
 
 export interface ContactButtonProps extends ButtonOwnProps {

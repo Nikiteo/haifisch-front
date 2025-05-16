@@ -1,16 +1,17 @@
 import { memo } from 'react'
-import { Stack } from '@mui/material'
+import { Stack, type SxProps, type Theme } from '@mui/material'
 import { NavItem } from './nav-item'
 
 interface NavMenuProps {
 	vertical?: boolean
+	itemProps?: Omit<SxProps<Theme>, 'color'>
 }
 
-export const NavMenu = memo(({ vertical = false }: NavMenuProps) => (
+export const NavMenu = memo(({ vertical = false, itemProps }: NavMenuProps) => (
 	<Stack
 		component='nav'
 		direction={vertical ? 'column' : 'row'}
-		spacing={vertical ? 2 : 9.5}
+		spacing={vertical ? 7 : 9.5}
 		sx={{
 			mx: vertical ? 0 : 9.5,
 			my: vertical ? 2 : 0,
@@ -19,13 +20,13 @@ export const NavMenu = memo(({ vertical = false }: NavMenuProps) => (
 			alignItems: vertical ? 'flex-start' : 'center',
 		}}
 	>
-		<NavItem sx={{ fontSize: { xl: 18, lg: 16 } }} targetId='about'>
+		<NavItem {...itemProps} targetId='about'>
 			О нас
 		</NavItem>
-		<NavItem sx={{ fontSize: { xl: 18, lg: 16 } }} targetId='catalog'>
+		<NavItem {...itemProps} targetId='catalog'>
 			Каталог
 		</NavItem>
-		<NavItem sx={{ fontSize: { xl: 18, lg: 16 } }} targetId='stores'>
+		<NavItem {...itemProps} targetId='stores'>
 			Магазины
 		</NavItem>
 	</Stack>

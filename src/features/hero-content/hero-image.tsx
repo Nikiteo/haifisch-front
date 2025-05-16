@@ -7,7 +7,6 @@ export const HeroImage = () => {
 			sx={{
 				width: '100%',
 				maxWidth: 1240,
-				height: 432,
 				display: 'flex',
 				justifyContent: 'center',
 				alignItems: 'center',

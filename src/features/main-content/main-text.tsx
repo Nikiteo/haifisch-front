@@ -105,12 +105,14 @@ export const MainText = () => {
 				variant='catalog'
 				sx={{
 					width: {
+						xs: 164,
 						sm: 164,
 						md: 200,
 						lg: 220,
 						xl: 220,
 					},
 					height: {
+						xs: 46,
 						sm: 46,
 						md: 54,
 						lg: 58,
