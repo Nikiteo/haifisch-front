@@ -4,6 +4,7 @@ import Stack from '@mui/material/Stack'
 import Box from '@mui/material/Box'
 import useMediaQuery from '@mui/material/useMediaQuery'
 import { useTheme } from '@mui/material/styles'
+import Toolbar from '@mui/material/Toolbar'
 
 const Main = () => {
 	const theme = useTheme()
@@ -18,6 +19,7 @@ const Main = () => {
 				flexDirection: 'column',
 				bgcolor: 'primary.main',
 				position: 'relative',
+				pt: { xs: '104px', md: '112px' },
 			}}
 		>
 			<Header />
@@ -54,6 +56,10 @@ const Main = () => {
 					width: '100%',
 					position: 'relative',
 					zIndex: 1,
+					height: 'calc(100vh - 104px)',
+					[theme.breakpoints.up('md')]: {
+						height: 'calc(100vh - 112px)',
+					},
 				}}
 			>
 				<MainText />

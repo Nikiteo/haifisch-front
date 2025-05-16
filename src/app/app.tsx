@@ -12,7 +12,7 @@ export const App = () => {
 			<Box
 				component='section'
 				sx={{
-					height: '100vh',
+					height: '50vh',
 				}}
 			/>
 		</ThemeProvider>

@@ -17,7 +17,7 @@ export const Header = () => {
 
 	return (
 		<AppBar
-			position='sticky'
+			position='fixed'
 			sx={{
 				boxShadow: 'none',
 				bgcolor: 'primary.main',
@@ -29,7 +29,6 @@ export const Header = () => {
 			<Toolbar
 				disableGutters
 				sx={{
-					minHeight: 'unset',
 					width: '100%',
 					display: 'flex',
 					justifyContent: 'space-between',
