@@ -4,7 +4,7 @@ import { ContactButton } from './contact-button'
 import { Logo } from './logo'
 import { MobileDrawer } from './mobile-drawer'
 import { MobileMenuButton } from './mobile-menu-button'
-import { AppBar, Stack, Toolbar, useMediaQuery, useTheme } from '@mui/material'
+import { AppBar, Toolbar, useMediaQuery, useTheme } from '@mui/material'
 
 export const Header = () => {
 	const theme = useTheme()
