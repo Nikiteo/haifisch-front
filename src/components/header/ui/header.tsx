@@ -1,13 +1,10 @@
-import { NavMenu } from '@/features/navigation'
-import { useHeaderLogic } from '../lib/use-header-logic'
+import { NavMenu } from '@/components/navigation'
+import { useHeaderLogic } from '../use-header-logic'
 import { ContactButton } from './contact-button'
 import { Logo } from './logo'
 import { MobileDrawer } from './mobile-drawer'
 import { MobileMenuButton } from './mobile-menu-button'
-import { useTheme } from '@mui/material/styles'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import AppBar from '@mui/material/AppBar'
-import Toolbar from '@mui/material/Toolbar'
+import { AppBar, Stack, Toolbar, useMediaQuery, useTheme } from '@mui/material'
 
 export const Header = () => {
 	const theme = useTheme()
@@ -22,21 +19,19 @@ export const Header = () => {
 				boxShadow: 'none',
 				bgcolor: 'primary.main',
 				transition: 'all 0.3s ease',
-				py: { xs: 4, sm: 5, md: 6, lg: 6, xl: 6 },
+				py: { xs: 4, sm: 5, md: 6, lg: 8, xl: 8 },
 				px: { xs: 5, sm: 5, md: 6, lg: 6, xl: 25 },
 			}}
 		>
 			<Toolbar
+				variant='dense'
 				disableGutters
 				sx={{
-					width: '100%',
-					display: 'flex',
+					minHeight: 58,
 					justifyContent: 'space-between',
-					alignItems: 'center',
 				}}
 			>
 				<Logo />
-
 				{isDesktop ? (
 					<>
 						<NavMenu />
@@ -45,7 +40,6 @@ export const Header = () => {
 				) : (
 					<MobileMenuButton onClick={openDrawer} />
 				)}
-
 				<MobileDrawer open={isDrawerOpen} onClose={closeDrawer} />
 			</Toolbar>
 		</AppBar>

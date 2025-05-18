@@ -1,9 +1,5 @@
-import { Header } from '@/widgets/header'
-import { MainText, MainImage } from '@/features'
-import Stack from '@mui/material/Stack'
-import Box from '@mui/material/Box'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import { useTheme } from '@mui/material/styles'
+import { Header, MainImage, MainText } from '@/components'
+import { useMediaQuery, Box, useTheme, Stack } from '@mui/material'
 
 const Main = () => {
 	const theme = useTheme()
@@ -18,7 +14,7 @@ const Main = () => {
 				flexDirection: 'column',
 				bgcolor: 'primary.main',
 				position: 'relative',
-				pt: { xs: '104px', md: '112px' },
+				pt: { xs: '106px', md: '122px' },
 			}}
 		>
 			<Header />
@@ -50,14 +46,13 @@ const Main = () => {
 				justifyContent={{ sm: 'center', xs: 'center' }}
 				alignItems={{ sm: 'center', xs: 'center' }}
 				sx={{
-					gap: { xl: 12, lg: 6.5, md: 2.5, xs: 1 },
-					flex: 1,
+					gap: { xl: 12.5, lg: 6.5, md: 2.5, xs: 1 },
 					width: '100%',
 					position: 'relative',
 					zIndex: 1,
-					height: 'calc(100vh - 104px)',
+					height: 'calc(100vh - 106px)',
 					[theme.breakpoints.up('md')]: {
-						height: 'calc(100vh - 112px)',
+						height: 'calc(100vh - 122px)',
 					},
 				}}
 			>

@@ -1,19 +1,16 @@
-import type { ContactButtonProps } from '../model/constants'
+import type { ContactButtonProps } from '../constants'
 import { Button } from '@mui/material'
 
-export const ContactButton = ({
-	onClick,
-	variant = 'contact',
-}: ContactButtonProps) => (
+export const ContactButton = ({ onClick }: ContactButtonProps) => (
 	<Button
-		variant={variant}
+		variant='contact'
 		onClick={onClick}
 		sx={{
 			width: {
 				sm: 164,
 				md: 200,
-				lg: 220,
-				xl: 220,
+				lg: 210,
+				xl: 210,
 			},
 			height: {
 				sm: 46,
@@ -21,7 +18,6 @@ export const ContactButton = ({
 				lg: 58,
 				xl: 58,
 			},
-			ml: variant === 'contact' ? 'auto' : 0,
 			whiteSpace: 'nowrap',
 		}}
 	>

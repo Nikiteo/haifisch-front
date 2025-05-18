@@ -1,4 +1,4 @@
-import { hero } from '@/shared/assets'
+import { hero } from '@/assets'
 import { Box } from '@mui/material'
 
 export const HeroImage = () => {

@@ -13,6 +13,7 @@ export const MainText = () => {
 					sm: '100%',
 					xs: '100%',
 				},
+				color: 'text.primary',
 				display: 'flex',
 				flexDirection: 'column',
 				justifyContent: 'center',
@@ -24,7 +25,6 @@ export const MainText = () => {
 		>
 			<Typography
 				variant='h1'
-				lineHeight='1.1'
 				textTransform='uppercase'
 				sx={{
 					position: 'relative',

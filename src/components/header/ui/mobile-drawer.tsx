@@ -1,6 +1,6 @@
 import { Box, Drawer, IconButton } from '@mui/material'
-import { NavMenu } from '@/features/navigation'
-import type { MobileDrawerProps } from '../model/constants'
+import { NavMenu } from '@/components/navigation'
+import type { MobileDrawerProps } from '../constants'
 import CloseIcon from '@mui/icons-material/Close'
 
 export const MobileDrawer = ({ open, onClose }: MobileDrawerProps) => (

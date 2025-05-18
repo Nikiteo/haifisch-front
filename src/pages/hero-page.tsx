@@ -1,8 +1,5 @@
-import { HeroImage, HeroText } from '@/features'
-import { Grid } from '@mui/material'
-import Box from '@mui/material/Box'
-import useMediaQuery from '@mui/material/useMediaQuery'
-import { useTheme } from '@mui/material/styles'
+import { HeroText, HeroImage } from '@/components'
+import { useTheme, useMediaQuery, Box, Grid } from '@mui/material'
 
 const Hero = () => {
 	const theme = useTheme()

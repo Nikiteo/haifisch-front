@@ -6,9 +6,10 @@ interface NavItemProps extends ButtonProps {
 }
 
 const StyledNavItem = styled(Button)(({ theme }) => ({
-	color: `${theme.palette.primary.contrastText}`,
+	color: `${theme.palette.text.primary}`,
+	fontSize: 18,
 	fontWeight: 300,
-	lineHeight: '100%',
+	lineHeight: 1,
 	padding: 0,
 	minWidth: 'auto',
 	textTransform: 'none',
@@ -24,7 +25,7 @@ const StyledNavItem = styled(Button)(({ theme }) => ({
 		backgroundColor: theme.palette.primary.contrastText,
 		transform: 'scaleX(0)',
 		transformOrigin: 'bottom right',
-		transition: 'transform 0.3s ease'
+		transition: 'transform 0.3s ease',
 	},
 	'&:hover': {
 		backgroundColor: 'transparent',

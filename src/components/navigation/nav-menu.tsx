@@ -11,12 +11,9 @@ export const NavMenu = memo(({ vertical = false, itemProps }: NavMenuProps) => (
 	<Stack
 		component='nav'
 		direction={vertical ? 'column' : 'row'}
-		spacing={vertical ? 7 : 9.5}
+		spacing={vertical ? 7 : 8}
+		pl={15}
 		sx={{
-			mx: vertical ? 0 : 9.5,
-			my: vertical ? 2 : 0,
-			flexGrow: 1,
-			justifyContent: 'center',
 			alignItems: vertical ? 'flex-start' : 'center',
 		}}
 	>

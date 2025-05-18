@@ -1,5 +1,4 @@
-import Box from '@mui/material/Box'
-import Typography from '@mui/material/Typography'
+import { Box, Typography } from '@mui/material'
 
 export const HeroText = () => {
 	return (
@@ -52,6 +51,7 @@ export const HeroText = () => {
 				component='p'
 				variant='body1'
 				fontWeight={300}
+				color='text.secondary'
 				lineHeight='1.4'
 				pt={{
 					xl: 9,

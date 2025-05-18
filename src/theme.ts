@@ -22,10 +22,14 @@ const baseTheme = createTheme({
 	typography: {
 		htmlFontSize: 16,
 		fontFamily: '"Inter", sans-serif',
+		allVariants: {
+			letterSpacing: 0.3,
+		},
 		h1: {
 			fontFamily: '"Playfair Display", serif',
 			fontWeight: 300,
 			fontSize: '3.125rem',
+			lineHeight: '1.1',
 			letterSpacing: 0,
 		},
 		h2: {
@@ -37,6 +41,7 @@ const baseTheme = createTheme({
 			fontFamily: '"Inter", sans-serif',
 			fontWeight: 300,
 			lineHeight: '1.4',
+			
 		},
 	},
 	breakpoints: {
@@ -59,6 +64,7 @@ const theme = createTheme(baseTheme, {
 					boxSizing: 'border-box',
 					padding: 0,
 					fontSize: '16px',
+					lineHeight: 1,
 					fontWeight: 300,
 					textTransform: 'none',
 					boxShadow: 'none',
