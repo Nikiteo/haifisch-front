@@ -8,6 +8,9 @@ export default defineConfig({
 	base: '/',
 	plugins: [react()],
 	publicDir: 'public',
+	build: {
+		target: 'esnext'
+	},
 	optimizeDeps: {
 		exclude: ['@yandex/ymaps3-default-ui-theme'],
 	},
