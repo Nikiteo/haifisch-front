@@ -15,6 +15,9 @@ const baseTheme = createTheme({
 			primary: '#262626',
 			secondary: '#6C6C6C',
 		},
+		info: {
+			main: '#D5D5D5',
+		},
 		common: {
 			black: '#000000',
 		},
@@ -28,20 +31,19 @@ const baseTheme = createTheme({
 		h1: {
 			fontFamily: '"Playfair Display", serif',
 			fontWeight: 300,
-			fontSize: '3.125rem',
+			fontSize: 50,
 			lineHeight: '1.1',
 			letterSpacing: 0,
 		},
 		h2: {
 			fontFamily: '"Playfair Display", serif',
 			fontWeight: 300,
-			fontSize: '2.125rem',
+			fontSize: 44,
 		},
 		body1: {
 			fontFamily: '"Inter", sans-serif',
 			fontWeight: 300,
-			lineHeight: '1.4',
-			
+			lineHeight: 1,
 		},
 	},
 	breakpoints: {
@@ -63,7 +65,7 @@ const theme = createTheme(baseTheme, {
 					borderRadius: '30px',
 					boxSizing: 'border-box',
 					padding: 0,
-					fontSize: '16px',
+					fontSize: 16,
 					lineHeight: 1,
 					fontWeight: 300,
 					textTransform: 'none',

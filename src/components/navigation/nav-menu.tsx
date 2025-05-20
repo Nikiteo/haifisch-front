@@ -1,5 +1,7 @@
-import { memo } from 'react'
 import { Stack, type SxProps, type Theme } from '@mui/material'
+
+import { memo } from 'react'
+
 import { NavItem } from './nav-item'
 
 interface NavMenuProps {
@@ -12,7 +14,6 @@ export const NavMenu = memo(({ vertical = false, itemProps }: NavMenuProps) => (
 		component='nav'
 		direction={vertical ? 'column' : 'row'}
 		spacing={vertical ? 7 : 8}
-		pl={15}
 		sx={{
 			alignItems: vertical ? 'flex-start' : 'center',
 		}}

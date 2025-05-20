@@ -1,7 +1,9 @@
-import { Box, Drawer, IconButton } from '@mui/material'
-import { NavMenu } from '@/components/navigation'
-import type { MobileDrawerProps } from '../constants'
 import CloseIcon from '@mui/icons-material/Close'
+import { Box, Drawer, IconButton } from '@mui/material'
+
+import type { MobileDrawerProps } from '../constants'
+
+import { NavMenu } from '@/components/navigation'
 
 export const MobileDrawer = ({ open, onClose }: MobileDrawerProps) => (
 	<Drawer
@@ -26,6 +28,7 @@ export const MobileDrawer = ({ open, onClose }: MobileDrawerProps) => (
 				}}
 			>
 				<IconButton
+					disableRipple
 					onClick={onClose}
 					sx={{
 						color: 'text.primary',

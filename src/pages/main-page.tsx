@@ -1,5 +1,6 @@
-import { Header, MainImage, MainText } from '@/components'
 import { useMediaQuery, Box, useTheme, Stack } from '@mui/material'
+
+import { Header, MainImage, MainText } from '@/components'
 
 const Main = () => {
 	const theme = useTheme()
@@ -46,7 +47,7 @@ const Main = () => {
 				justifyContent={{ sm: 'center', xs: 'center' }}
 				alignItems={{ sm: 'center', xs: 'center' }}
 				sx={{
-					gap: { xl: 12.5, lg: 6.5, md: 2.5, xs: 1 },
+					gap: { xl: 12, lg: 6.5, md: 2.5, xs: 1 },
 					width: '100%',
 					position: 'relative',
 					zIndex: 1,

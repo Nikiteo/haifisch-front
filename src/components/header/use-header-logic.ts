@@ -1,5 +1,6 @@
-import { useCallback, useState } from 'react'
 import { useMediaQuery, useTheme } from '@mui/material'
+
+import { useCallback, useState } from 'react'
 
 export const useHeaderLogic = () => {
 	const [isDrawerOpen, setIsDrawerOpen] = useState(false)

@@ -1,5 +1,6 @@
-import type { ContactButtonProps } from '../constants'
 import { Button } from '@mui/material'
+
+import type { ContactButtonProps } from '../constants'
 
 export const ContactButton = ({ onClick }: ContactButtonProps) => (
 	<Button

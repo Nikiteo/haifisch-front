@@ -1,5 +1,6 @@
-import { hero } from '@/assets'
 import { Box } from '@mui/material'
+
+import { hero } from '@/assets'
 
 export const HeroImage = () => {
 	return (

@@ -1,6 +1,8 @@
-import { logo } from '@/assets'
-import { LOGO_SIZES, type LogoProps } from '../constants'
 import { Link, Box } from '@mui/material'
+
+import { LOGO_SIZES, type LogoProps } from '../constants'
+
+import { logo } from '@/assets'
 
 export const Logo = ({ href = 'https://haifisch.ru' }: LogoProps) => {
 	return (

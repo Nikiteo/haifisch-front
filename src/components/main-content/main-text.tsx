@@ -90,6 +90,7 @@ export const MainText = () => {
 			<Typography
 				component='p'
 				variant='body1'
+				lineHeight='1.4'
 				my={{ xl: 9, lg: 6, md: 6, sm: 5, xs: 5 }}
 				sx={{
 					width: '80%',

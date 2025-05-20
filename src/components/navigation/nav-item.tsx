@@ -1,5 +1,6 @@
-import { memo, useCallback } from 'react'
 import { Button, type ButtonProps, styled } from '@mui/material'
+
+import { memo, useCallback } from 'react'
 
 interface NavItemProps extends ButtonProps {
 	targetId: string
@@ -42,7 +43,7 @@ export const NavItem = memo(
 			document
 				.getElementById(targetId)
 				?.scrollIntoView({ behavior: 'smooth' })
-		}, [])
+		}, [targetId])
 
 		return (
 			<StyledNavItem onClick={handleClick} disableRipple {...props}>

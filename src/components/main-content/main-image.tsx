@@ -1,4 +1,5 @@
 import { Box } from '@mui/material'
+
 import { main } from '@/assets'
 
 export const MainImage = ({
@@ -8,7 +9,7 @@ export const MainImage = ({
 }) => (
 	<Box
 		sx={{
-			width: asBackground ? '100%' : '54%',
+			width: asBackground ? '100%' : '53%',
 			height: '100%',
 			...(asBackground && {
 				position: 'absolute',

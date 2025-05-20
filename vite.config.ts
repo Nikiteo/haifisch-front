@@ -8,6 +8,9 @@ export default defineConfig({
 	base: '/',
 	plugins: [react()],
 	publicDir: 'public',
+	optimizeDeps: {
+		exclude: ['@yandex/ymaps3-default-ui-theme'],
+	},
 	resolve: {
 		alias: {
 			'@': `${__dirname}/src`,
