@@ -1,16 +1,16 @@
 import { Link, Box } from '@mui/material'
 
-import { LOGO_SIZES, type LogoProps } from '../constants'
+import { LOGO_SIZES } from '../constants'
 
 import { logo } from '@/assets'
 
-export const Logo = ({ href = 'https://haifisch.ru' }: LogoProps) => {
+export const Logo = () => {
 	return (
 		<Link
-			href={href}
+			href='https://haifisch.ru'
 			target='_blank'
 			rel='noopener noreferrer'
-			sx={{ display: 'flex' }}
+			display='flex'
 		>
 			<Box
 				component='img'

@@ -9,25 +9,23 @@ const Main = () => {
 	return (
 		<Box
 			component='main'
-			sx={{
-				height: '100vh',
-				display: 'flex',
-				flexDirection: 'column',
-				bgcolor: 'primary.main',
-				position: 'relative',
-				pt: { xs: '106px', md: '122px' },
-			}}
+			bgcolor='primary.main'
+			position='relative'
+			display='flex'
+			flexDirection='column'
+			height='100vh'
+			pt={{ xs: '106px', md: '122px' }}
 		>
 			<Header />
 			{isSm && (
 				<Box
 					component='div'
+					position='absolute'
+					width='100%'
+					height='100%'
 					sx={{
-						position: 'absolute',
 						top: 0,
 						left: 0,
-						width: '100%',
-						height: '100%',
 						zIndex: 0,
 						opacity: 0.3,
 					}}
@@ -38,6 +36,9 @@ const Main = () => {
 
 			<Stack
 				component='section'
+				position='relative'
+				width='100%'
+				height='calc(100vh - 122px)'
 				direction={{
 					xl: 'row',
 					lg: 'row',
@@ -48,12 +49,10 @@ const Main = () => {
 				alignItems={{ sm: 'center', xs: 'center' }}
 				sx={{
 					gap: { xl: 12, lg: 6.5, md: 2.5, xs: 1 },
-					width: '100%',
-					position: 'relative',
 					zIndex: 1,
-					height: 'calc(100vh - 106px)',
-					[theme.breakpoints.up('md')]: {
-						height: 'calc(100vh - 122px)',
+					[theme.breakpoints.down('md')]: {
+						height: 'calc(100vh - 106px)',
+						px: 5,
 					},
 				}}
 			>

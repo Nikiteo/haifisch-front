@@ -25,9 +25,9 @@ const StyledLink = styled(Link)(({ theme }) => ({
 export const FooterText = () => {
 	return (
 		<Box
+			pl={{ xl: 25, lg: 6, md: 6, sm: 5, xs: 5 }}
 			sx={{
 				width: { xl: '35%', lg: '40%' },
-				pl: { xs: 5, sm: 5, md: 6, lg: 6, xl: 25 },
 				mb: { xs: 5, sm: 5, md: 9, lg: 0, xl: 0 },
 			}}
 		>
@@ -36,8 +36,8 @@ export const FooterText = () => {
 				lineHeight='1'
 				textTransform='uppercase'
 				color='secondary.contrastText'
-				mb={{ xl: 15, lg: 15, md: 12.5 }}
-				mt={{ xl: 0, lg: 0, md: 20 }}
+				mb={{ xl: 15, lg: 15, md: 12.5, sm: 11.5, xs: 10 }}
+				mt={{ xl: 0, lg: 0, md: 20, sm: 15, xs: 12.5 }}
 				sx={{
 					fontSize: {
 						xl: 34,

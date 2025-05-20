@@ -7,13 +7,16 @@ const Footer = () => {
 	return (
 		<Box
 			component='footer'
+			bgcolor='secondary.main'
+			position='relative'
+			height='calc(100vh - 122px)'
+			maxHeight={739}
+			display='flex'
+			flexDirection='column'
+			pb={{ xl: 15, lg: 15, md: 12, sm: 10, xs: 6 }}
 			sx={{
-				bgcolor: 'secondary.main',
-				position: 'relative',
-				// pt: { xs: '106px', md: '122px' },
-				height: 'calc(100vh - 106px)',
-				[theme.breakpoints.up('md')]: {
-					height: 'calc(100vh - 122px)',
+				[theme.breakpoints.down('md')]: {
+					height: 'calc(100vh - 106px)',
 				},
 			}}
 		>

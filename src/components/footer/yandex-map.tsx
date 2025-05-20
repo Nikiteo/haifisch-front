@@ -18,7 +18,7 @@ export const YandexMap = () => {
 		<Box
 			sx={{
 				width: { xl: '65%', lg: '60%', md: '100%' },
-				height: { xl: 544, lg: 500, md: 388 },
+				height: { xl: 544, lg: 500, md: 388, sm: 420, xs: 328 },
 			}}
 		>
 			<YMap location={reactify.useDefault(LOCATION)}>

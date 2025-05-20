@@ -1,33 +1,36 @@
-import Box from '@mui/material/Box'
-import Button from '@mui/material/Button'
-import Typography from '@mui/material/Typography'
+import { Box, Button, Typography, useTheme } from '@mui/material'
 
 export const MainText = () => {
+	const theme = useTheme()
+
 	return (
 		<Box
+			color='text.primary'
+			display='flex'
+			flexDirection='column'
+			justifyContent='center'
+			position='relative'
 			sx={{
+				[theme.breakpoints.up('md')]: {
+					ml: { xl: 25, lg: 6, md: 6 },
+				},
+				[theme.breakpoints.down('md')]: {
+					mx: { xl: 0, lg: 0, md: 0, sm: 5, xs: 5 },
+				},
 				width: {
-					xl: '45%',
-					lg: '45%',
-					md: '45%',
+					xl: '50%',
+					lg: '50%',
+					md: '50%',
 					sm: '100%',
 					xs: '100%',
 				},
-				color: 'text.primary',
-				display: 'flex',
-				flexDirection: 'column',
-				justifyContent: 'center',
-				position: 'relative',
-				zIndex: 1,
-				ml: { xl: 25, lg: 6, md: 6 },
-				px: { xl: 0, lg: 0, md: 0, sm: 5, xs: 5 },
 			}}
 		>
 			<Typography
 				variant='h1'
 				textTransform='uppercase'
+				position='relative'
 				sx={{
-					position: 'relative',
 					fontSize: {
 						xl: 50,
 						lg: 38,
@@ -41,6 +44,9 @@ export const MainText = () => {
 				<Typography
 					variant='h1'
 					component='span'
+					fontStyle='italic'
+					display='inline-block'
+					textTransform='lowercase'
 					sx={{
 						fontSize: {
 							xl: 44,
@@ -49,9 +55,6 @@ export const MainText = () => {
 							sm: 32,
 							xs: 26,
 						},
-						fontStyle: 'italic',
-						display: 'inline-block',
-						textTransform: 'lowercase',
 					}}
 				>
 					для
@@ -59,15 +62,16 @@ export const MainText = () => {
 				декора
 				<Box
 					component='span'
-					sx={{
-						display: 'block',
-						textAlign: 'right',
-						width: '100%',
-					}}
+					display='block'
+					textAlign='right'
+					width='100%'
 				>
 					<Typography
 						variant='h1'
 						component='span'
+						fontStyle='italic'
+						display='inline-block'
+						textTransform='lowercase'
 						sx={{
 							fontSize: {
 								xl: 44,
@@ -76,9 +80,6 @@ export const MainText = () => {
 								sm: 32,
 								xs: 26,
 							},
-							fontStyle: 'italic',
-							display: 'inline-block',
-							textTransform: 'lowercase',
 						}}
 					>
 						из
@@ -91,11 +92,9 @@ export const MainText = () => {
 				component='p'
 				variant='body1'
 				lineHeight='1.4'
+				width='80%'
+				alignSelf='flex-start'
 				my={{ xl: 9, lg: 6, md: 6, sm: 5, xs: 5 }}
-				sx={{
-					width: '80%',
-					alignSelf: 'flex-start',
-				}}
 			>
 				Получите специальные предложения при оформлении заказа оптом. А
 				также воплотите свои идеи и закажите продукцию по индивидуальной

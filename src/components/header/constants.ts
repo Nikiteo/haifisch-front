@@ -7,11 +7,6 @@ export const LOGO_SIZES = {
 	sm: { width: 82, height: 20 }, // 480-640
 	xs: { width: 76, height: 19 }, // 320-480
 }
-
-export interface LogoProps {
-	href?: string
-}
-
 export interface MobileDrawerProps {
 	open: boolean
 	onClose: () => void

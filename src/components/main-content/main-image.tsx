@@ -2,14 +2,15 @@ import { Box } from '@mui/material'
 
 import { main } from '@/assets'
 
-export const MainImage = ({
-	asBackground = false,
-}: {
-	asBackground?: boolean
-}) => (
+export const MainImage = ({ asBackground = false }: { asBackground?: boolean }) => (
 	<Box
 		sx={{
-			width: asBackground ? '100%' : '54%',
+			width: asBackground
+				? '100%'
+				: {
+						xl: 'calc(50% + 100px + 48px)',
+						lg: 'calc(50% + 24px + 26px)'
+				  },
 			height: '100%',
 			...(asBackground && {
 				position: 'absolute',

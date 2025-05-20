@@ -6,14 +6,16 @@ export const Copyrights = () => {
 		<Stack
 			direction='row'
 			alignItems='center'
-			mt={9}
-			sx={{ pl: { xs: 5, sm: 5, md: 6, lg: 6, xl: 25 } }}
+			mt='auto'
+			pl={{ xl: 25, lg: 6, md: 6, sm: 5, xs: 5 }}
 		>
 			<Link
 				href='https://haifisch.ru'
 				target='_blank'
 				rel='noopener noreferrer'
-				sx={{ display: 'flex', width: 127, height: 41 }}
+				display='flex'
+				width='127'
+				height='41'
 			>
 				<Box
 					component='img'
