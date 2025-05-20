@@ -9,7 +9,7 @@ export const MainImage = ({
 }) => (
 	<Box
 		sx={{
-			width: asBackground ? '100%' : '53%',
+			width: asBackground ? '100%' : '54%',
 			height: '100%',
 			...(asBackground && {
 				position: 'absolute',

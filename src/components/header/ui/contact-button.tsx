@@ -10,8 +10,8 @@ export const ContactButton = ({ onClick }: ContactButtonProps) => (
 			width: {
 				sm: 164,
 				md: 200,
-				lg: 210,
-				xl: 210,
+				lg: 220,
+				xl: 220,
 			},
 			height: {
 				sm: 46,
