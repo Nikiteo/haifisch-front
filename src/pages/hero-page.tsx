@@ -1,35 +1,31 @@
 import { useTheme, useMediaQuery, Box, Stack } from '@mui/material'
-import { HeroText, HeroImage } from '@/components'
+import { HeroText, HeroImage, heroStyles } from '@/components'
+import { hero } from '@/assets'
 
 const Hero = () => {
 	const theme = useTheme()
 	const isMd = useMediaQuery(theme.breakpoints.down('lg'))
 	const isSm = useMediaQuery(theme.breakpoints.down('md'))
+	const styles = heroStyles(theme)
 
 	return (
 		<Box
 			component='section'
 			display='flex'
 			flexDirection='column'
-			sx={{
-				my: { xl: 30, lg: 25, md: 20, sm: 15, xs: 12.5 },
-				mx: { xl: 25, lg: 6, md: 6, sm: 5, xs: 5 },
-			}}
+			sx={styles.section}
 		>
 			<Stack
 				direction={isMd ? 'row-reverse' : 'row'}
-				sx={{ gap: { xl: 12 } }}
 				justifyContent='space-between'
+				sx={styles.gaps}
 			>
-				{!isSm && <Box sx={{ width: { md: '50%' } }} />}
-
-				<Box sx={{ width: { md: 'calc(50% + 48px)' } }}>
+				{!isSm && <Box width='50%' />}
+				<Box sx={styles.textContainer}>
 					<HeroText />
 				</Box>
 			</Stack>
-			<Box display='flex' justifyContent='center'>
-				<HeroImage />
-			</Box>
+			<HeroImage src={hero} alt='Изделия из камня' />
 		</Box>
 	)
 }

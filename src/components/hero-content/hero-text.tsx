@@ -1,39 +1,25 @@
-import { Box, Typography } from '@mui/material'
+import { heroStyles, Heading, Text } from '@/components'
+import { Box, useTheme } from '@mui/material'
 
 export const HeroText = () => {
-	const textStyles = {
-		fontSize: { xl: 34, lg: 28, md: 24, sm: 22, xs: 18 },
-		lineHeight: '1.4',
-		textTransform: 'uppercase',
-	}
+	const theme = useTheme()
+	const styles = heroStyles(theme)
 
 	return (
-		<Box
-			display='flex'
-			flexDirection='column'
-			sx={{
-				mb: { xl: 15, lg: 15, md: 12.5, sm: 11.5, xs: 10 },
-			}}
-		>
-			<Typography variant='h2' sx={textStyles}>
-				Мастерская Haifisch –
-			</Typography>
-			<Typography variant='h2' sx={textStyles}>
+		<Box display='flex' flexDirection='column'>
+			<Heading variant='h2'>Мастерская Haifisch –</Heading>
+			<Heading variant='h2'>
 				создаём уникальные предметы интерьера
-			</Typography>
-
-			<Typography
+			</Heading>
+			<Text
 				variant='body1'
-				color='text.secondary'
-				lineHeight='1.4'
-				mt={{ xl: 9, lg: 9, md: 8, sm: 6, xs: 5 }}
-				sx={{ width: { xl: '65%', lg: '65%' } }}
+				sx={styles.additionalText}
 			>
-				Наши изделия из искусственного камня сочетают в себе
-				элегантность и практичность. Каждый предмет имеет неповторимый
-				природный узор и текстуру и станет ярким акцентом в любом
-				интерьере.
-			</Typography>
+				Наши изделия из{'\u00A0'}искусственного камня сочетают в
+				{'\u00A0'}себе элегантность и{'\u00A0'}практичность. Каждый
+				предмет имеет неповторимый природный узор и{'\u00A0'}текстуру и
+				{'\u00A0'}станет ярким акцентом в{'\u00A0'}любом интерьере.
+			</Text>
 		</Box>
 	)
 }

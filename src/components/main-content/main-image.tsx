@@ -9,7 +9,8 @@ export const MainImage = ({ asBackground = false }: { asBackground?: boolean }) 
 				? '100%'
 				: {
 						xl: 'calc(50% + 100px + 48px)',
-						lg: 'calc(50% + 24px + 26px)'
+						lg: 'calc(50% + 24px + 26px)',
+						md: 'calc(50% + 10px + 26px)',
 				  },
 			height: '100%',
 			...(asBackground && {

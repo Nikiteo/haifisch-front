@@ -1,3 +1,4 @@
-export * from './footer-text'
 export * from './yandex-map'
-export * from './copyrights'
+export * from './copyright'
+export * from './links'
+export * from './styles'

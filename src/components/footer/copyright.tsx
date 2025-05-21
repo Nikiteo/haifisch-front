@@ -1,21 +1,23 @@
+import { Stack, Typography, Box, Link } from '@mui/material'
 import { logoDark } from '@/assets'
-import { Link, Box, Stack, Typography } from '@mui/material'
+import { footerStyles } from './styles'
 
-export const Copyrights = () => {
+export const Copyright = () => {
+	const styles = footerStyles()
+
 	return (
 		<Stack
 			direction='row'
 			alignItems='center'
-			mt='auto'
-			pl={{ xl: 25, lg: 6, md: 6, sm: 5, xs: 5 }}
+			sx={styles.copyrightContainer}
 		>
 			<Link
 				href='https://haifisch.ru'
 				target='_blank'
 				rel='noopener noreferrer'
 				display='flex'
-				width='127'
-				height='41'
+				width={127}
+				height={41}
 			>
 				<Box
 					component='img'
