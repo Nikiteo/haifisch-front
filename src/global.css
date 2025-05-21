@@ -8,4 +8,24 @@ body,
 	width: 100vw;
 	height: 100vh;
 	overflow-x: hidden;
+	background-color: #ECECEC;
+	
+	padding-top: env(safe-area-inset-top);
+	padding-left: env(safe-area-inset-left);
+	padding-right: env(safe-area-inset-right);
+	padding-bottom: env(safe-area-inset-bottom);
+}
+
+.notch-area {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: env(safe-area-inset-top);
+	background-color: #ECECEC;
+	z-index: 9999;
+}
+
+:fullscreen {
+	background-color: #ECECEC;
 }
