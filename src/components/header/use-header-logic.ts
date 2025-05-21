@@ -11,10 +11,15 @@ export const useHeaderLogic = () => {
 	const handleContactClick = useCallback(() => {
 		window.location.href = 'tg://resolve?domain=@Haifisch_store'
 		setTimeout(() => {
-			window.open('https://t.me/@Haifisch_store', '_blank')
+			const a = document.createElement('a')
+			a.href = 'https://t.me/Haifisch_store'
+			a.target = '_blank'
+			a.rel = 'noopener noreferrer'
+			document.body.appendChild(a)
+			a.click()
+			document.body.removeChild(a)
 		}, 3500)
 	}, [])
-
 
 	return {
 		isDesktop,
