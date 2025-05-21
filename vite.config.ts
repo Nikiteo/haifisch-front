@@ -1,12 +1,23 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { fileURLToPath } from 'url'
+import { createHtmlPlugin } from 'vite-plugin-html'
 
 const __dirname = fileURLToPath(new URL('.', import.meta.url))
 
 export default defineConfig({
 	base: '/',
-	plugins: [react()],
+	plugins: [
+		react(),
+		createHtmlPlugin({
+			inject: {
+				data: {
+					VITE_YANDEX_MAPS_API_KEY:
+						process.env.VITE_YANDEX_MAPS_API_KEY,
+				},
+			},
+		}),
+	],
 	publicDir: 'public',
 	build: {
 		target: 'esnext',
