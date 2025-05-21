@@ -1,0 +1,2 @@
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Nikiteo_haifisch-front&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Nikiteo_haifisch-front)
+[![🚀 Deploy Frontend](https://github.com/Nikiteo/haifisch-front/actions/workflows/deploy.yml/badge.svg?branch=main)](https://github.com/Nikiteo/haifisch-front/actions/workflows/deploy.yml)

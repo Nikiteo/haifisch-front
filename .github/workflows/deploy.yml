@@ -69,7 +69,7 @@ jobs:
           *${{ job.status == 'success' && '✅ Деплой успешен' || '❌ Ошибка деплоя' }}*
           ==================
           *Проект*: ${{ github.repository }}
-          *Версия*: ${{ env.BUILD_DATE }}
+          *Дата*: ${{ env.BUILD_DATE }}
           ==================
           [Логи](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})
         format: markdown

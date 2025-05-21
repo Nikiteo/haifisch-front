@@ -5,15 +5,10 @@ import Footer from '@/pages/footer-page'
 import Hero from '@/pages/hero-page'
 import Main from '@/pages/main-page'
 import theme from '@/theme'
-import '@fontsource/inter/200.css'
+
+import '@fontsource/inter/300.css'
 import '@fontsource/inter/400.css'
-import '@fontsource/inter/500.css'
-import '@fontsource/inter/600.css'
-import '@fontsource/inter/700.css'
 import '@fontsource/playfair-display/400.css'
-import '@fontsource/playfair-display/500.css'
-import '@fontsource/playfair-display/600.css'
-import '@fontsource/playfair-display/700.css'
 import '@fontsource/playfair-display/400-italic.css'
 
 export const App = () => {
