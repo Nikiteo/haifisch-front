@@ -1,3 +1,4 @@
+import { LOGO_SIZES } from './constants'
 import { Link, styled } from '@mui/material'
 
 export const footerStyles = () => ({
@@ -29,6 +30,24 @@ export const footerStyles = () => ({
 		pt: 9,
 		pl: { xl: 25, lg: 6, md: 6, sm: 5, xs: 5 },
 		pb: { xl: 30, lg: 25, md: 20, sm: 15, xs: 12.5 },
+	},
+	logo: {
+		width: {
+			xs: LOGO_SIZES.xs.width,
+			sm: LOGO_SIZES.sm.width,
+			md: LOGO_SIZES.md.width,
+			lg: LOGO_SIZES.lg.width,
+			xl: LOGO_SIZES.xl.width,
+		},
+		height: {
+			xs: LOGO_SIZES.xs.height,
+			sm: LOGO_SIZES.sm.height,
+			md: LOGO_SIZES.md.height,
+			lg: LOGO_SIZES.lg.height,
+			xl: LOGO_SIZES.xl.height,
+		},
+		objectFit: 'contain',
+		transition: 'all 0.3s ease',
 	},
 })
 

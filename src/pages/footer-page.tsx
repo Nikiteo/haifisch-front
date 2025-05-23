@@ -1,8 +1,7 @@
-import { Copyright, Links, YandexMap } from '@/components'
+import { Copyright, Links, YandexMap, footerStyles } from '@/components'
 import { Box, Stack } from '@mui/material'
-import { footerStyles } from '@/components'
 
-const Footer = () => {
+const FooterPage = () => {
 	return (
 		<Box component='footer' sx={footerStyles().root}>
 			<Stack sx={footerStyles().contentContainer}>
@@ -14,4 +13,4 @@ const Footer = () => {
 	)
 }
 
-export default Footer
+export default FooterPage

@@ -1,9 +1,8 @@
 import { useTheme, useMediaQuery, Box, Stack } from '@mui/material'
-import { HeroText, HeroImage, heroStyles } from '@/components'
-import { hero } from '@/assets'
+import { HeroText, Paragraph, heroStyles, StoresImages } from '@/components'
 import { useTranslation } from 'react-i18next'
 
-const HeroPage = () => {
+const StoresPage = () => {
 	const theme = useTheme()
 	const isSm = useMediaQuery(theme.breakpoints.down('md'))
 	const styles = heroStyles(theme)
@@ -11,6 +10,7 @@ const HeroPage = () => {
 
 	return (
 		<Box
+			id='stores'
 			component='section'
 			display='flex'
 			flexDirection='column'
@@ -20,16 +20,20 @@ const HeroPage = () => {
 				{!isSm && <Box width='50%' />}
 				<Box sx={styles.textContainer}>
 					<HeroText
-						heading={t('hero.heading')}
-						innerHeading={t('hero.inner-heading')}
-						text={t('hero.text')}
-						maxWidth={450}
+						heading={t('stores.heading')}
+						innerHeading={t('stores.inner-heading')}
+						text={<Paragraph />}
+						maxWidth={550}
+						indent={{
+							xl: '-110px',
+							lg: '-90px',
+						}}
 					/>
 				</Box>
 			</Stack>
-			<HeroImage src={hero} alt='Изделия из камня' />
+			<StoresImages />
 		</Box>
 	)
 }
 
-export default HeroPage
+export default StoresPage

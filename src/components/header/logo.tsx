@@ -1,6 +1,6 @@
 import { Link, Box } from '@mui/material'
 
-import { LOGO_SIZES } from '../constants'
+import { LOGO_SIZES } from './constants'
 
 import { logo } from '@/assets'
 

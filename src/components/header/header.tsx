@@ -1,6 +1,6 @@
 import { AppBar, Toolbar, useMediaQuery, useTheme } from '@mui/material'
 
-import { useHeaderLogic } from '../use-header-logic'
+import { useHeaderLogic } from './use-header-logic'
 
 import { ContactButton } from './contact-button'
 import { Logo } from './logo'
@@ -8,7 +8,6 @@ import { MobileDrawer } from './mobile-drawer'
 import { MobileMenuButton } from './mobile-menu-button'
 
 import { NavMenu } from '@/components/navigation'
-
 
 export const Header = () => {
 	const theme = useTheme()

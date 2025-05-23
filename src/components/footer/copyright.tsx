@@ -16,17 +16,12 @@ export const Copyright = () => {
 				target='_blank'
 				rel='noopener noreferrer'
 				display='flex'
-				width={127}
-				height={41}
 			>
 				<Box
 					component='img'
 					src={logoDark}
 					alt='Логотип Haifisch'
-					sx={{
-						objectFit: 'contain',
-						transition: 'all 0.3s ease',
-					}}
+					sx={styles.logo}
 				/>
 			</Link>
 			<Typography color='secondary.contrastText' pl={2}>

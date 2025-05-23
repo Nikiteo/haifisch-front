@@ -1,7 +1,7 @@
 import CloseIcon from '@mui/icons-material/Close'
 import { Box, Drawer, IconButton } from '@mui/material'
 
-import type { MobileDrawerProps } from '../constants'
+import type { MobileDrawerProps } from './constants'
 
 import { NavMenu } from '@/components/navigation'
 

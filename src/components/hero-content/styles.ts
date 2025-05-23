@@ -36,22 +36,34 @@ export const heroStyles = (theme: Theme) => ({
 		my: { xl: 30, lg: 25, md: 20, sm: 15, xs: 12.5 },
 		mx: { xl: 25, lg: 6, md: 6, sm: 5, xs: 5 },
 	},
+	storesSection: {
+		my: { xl: 30, lg: 25, md: 20, sm: 15, xs: 12.5 },
+		mx: { xl: 25, lg: 6, md: 6, sm: 5, xs: 5 },
+	},
 	textContainer: {
 		width: {
 			xl: 'calc(50% + 48px)',
 			lg: 'calc(50% + 26px)',
+			md: '100%',
 		},
 		mb: { xl: 15, lg: 15, md: 12.5, sm: 11.5, xs: 10 },
 	},
-	gaps: {
-		gap: { xl: 12, lg: 6.5, md: 2.5, xs: 1 },
+	stack: {
+		gap: { xl: 12, lg: 6.5, md: 2.5, sm: 1, xs: 1 },
+		flexDirection: {
+			xl: 'row',
+			lg: 'row',
+			md: 'row-reverse',
+		},
 	},
 	additionalText: {
 		color: theme.palette.text.secondary,
 		mt: { xl: 9, lg: 9, md: 8, sm: 6, xs: 5 },
-		width: '70%',
 		[theme.breakpoints.down('sm')]: {
 			width: '100%',
+		},
+		[theme.breakpoints.up('sm')]: {
+			width: '432px',
 		},
 	},
 })

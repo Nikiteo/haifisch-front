@@ -2,7 +2,7 @@ import { useMediaQuery, Box, useTheme, Stack } from '@mui/material'
 
 import { Header, MainImage, MainText } from '@/components'
 
-const Main = () => {
+const MainPage = () => {
 	const theme = useTheme()
 	const isSm = useMediaQuery(theme.breakpoints.down('md'))
 
@@ -63,4 +63,4 @@ const Main = () => {
 	)
 }
 
-export default Main
+export default MainPage

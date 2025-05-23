@@ -4,6 +4,8 @@ import { ThemeProvider } from '@mui/material'
 import Footer from '@/pages/footer-page'
 import Hero from '@/pages/hero-page'
 import Main from '@/pages/main-page'
+import StoresPage from '@/pages/stores-page'
+
 import theme from '@/theme'
 
 import '@fontsource/inter/300.css'
@@ -16,6 +18,7 @@ export const App = () => {
 		<ThemeProvider theme={theme}>
 			<Main />
 			<Hero />
+			<StoresPage />
 			<Footer />
 		</ThemeProvider>
 	)

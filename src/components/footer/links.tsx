@@ -14,7 +14,7 @@ export const Links = () => {
 				{CONTACT_LINKS.map((link, index) => (
 					<StyledFooterLink
 						variant='body1'
-						key={index}
+						key={`${index}-${link.href}`}
 						href={link.href}
 						target='_blank'
 						rel='noopener noreferrer'
